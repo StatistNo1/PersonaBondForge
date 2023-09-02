@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Project Itzal - Main Pack</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Persona ascended pistol-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>Itzal_AscendedPistol</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>1</AccuracyTouch>
+								<AccuracyShort>1</AccuracyShort>
+								<AccuracyMedium>0.85</AccuracyMedium>
+								<AccuracyLong>0.70</AccuracyLong>
+								<RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_AscendedPistol</defaultProjectile>
+									<warmupTime>0.3</warmupTime>
+									<range>35.9</range>
+									<soundCast>PlasmaShot</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_AscendedPistol</defName>
+							<label>Ascended pistol bullet</label>
+							<graphicData>
+								<texPath>Things/Projectile/Bullet_Small</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<flyOverhead>false</flyOverhead>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>26</damageAmountBase>
+								<stoppingPower>1</stoppingPower>
+								<speed>80</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona ascended rifle-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>Itzal_AscendedRifle</baseWeaponDefName>
+							<techLevel>Spacer</techLevel>
+							<statBases>
+								<AccuracyTouch>0.80</AccuracyTouch>
+								<AccuracyShort>0.95</AccuracyShort>
+								<AccuracyMedium>1</AccuracyMedium>
+								<AccuracyLong>1</AccuracyLong>
+								<RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_AscendedRifle</defaultProjectile>
+									<warmupTime>2</warmupTime>
+									<range>66.9</range>
+									<soundCast>LaserShotLong</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_AscendedRifle</defName>
+							<label>Ascended rifle shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/ChargeLanceShot</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>1.5</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>46</damageAmountBase>
+								<stoppingPower>2.5</stoppingPower>
+								<speed>120</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

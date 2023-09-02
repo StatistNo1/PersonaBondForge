@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<OnboardPersonaDescription>{0}\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</OnboardPersonaDescription>
+	<OnboardPersonaLabel>persona {0}</OnboardPersonaLabel>
+</LanguageData>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Psysword</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="Make_Bond_PsySword"]/ingredients/li/filter/thingDefs/li[text()="BondingCore"]</xpath>
+					<value>
+						<li>PersonaBondForge_ThingDef_BondingCore</li>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="Make_Bond_PsySword"]/fixedIngredientFilter/thingDefs/li[text()="BondingCore"]</xpath>
+					<value>
+							<li>PersonaBondForge_ThingDef_BondingCore</li>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="Make_Bond_PsySword"]/recipeUsers/li[text()="BondingBench"]</xpath>
+					<value>
+						<li>PersonaBondForge_ThingDef_BondingBench</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

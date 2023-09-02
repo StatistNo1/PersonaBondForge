@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Shit that either has to stay because Rimworld complains or stuff that's static anyway -->
+	<ThingDef Name="PersonaBondForge_BaseWeapon" Abstract="True">
+		<smeltable>false</smeltable>
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Intellectual</workSkill>
+			<skillRequirements>
+				<Intellectual>15</Intellectual>
+			</skillRequirements>
+			<recipeUsers Inherit="False">
+				<li>PersonaBondForge_ThingDef_BondingBench</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		</recipeMaker>
+		<costList>
+			<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+		</costList>
+		<statBases>
+			<WorkToMake>200000</WorkToMake>
+		</statBases>
+		<thingCategories>
+			<li>WeaponsMeleeBladelink</li>
+		</thingCategories>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_BladelinkWeapon">
+				<biocodeOnEquip>true</biocodeOnEquip>
+			</li>
+			<li Class="CompProperties_GeneratedName">
+				<nameMaker>NamerWeaponBladelink</nameMaker>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Styleable"/>
+		</comps>
+	</ThingDef>
+</Defs>

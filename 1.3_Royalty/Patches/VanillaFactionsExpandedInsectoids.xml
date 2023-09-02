@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Vanilla Factions Expanded - Insectoids</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Persona plasmacutter -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFE_Gun_Plasmacutter</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.94</AccuracyTouch>
+								<AccuracyShort>0.91</AccuracyShort>
+								<AccuracyMedium>0.65</AccuracyMedium>
+								<AccuracyLong>0.45</AccuracyLong>
+								<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MiningSpeed>0.33</MiningSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Plasmacutter</defaultProjectile>
+									<warmupTime>1.4</warmupTime>
+									<range>12.9</range>
+									<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>VFE_PlasmaShot_Cutter</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Plasmacutter</defName>
+							<label>plasmacutter shot</label>
+							<thingClass>VFEI.Other.PlasmaCutterBullet</thingClass>
+							<graphicData>
+								<texPath>Things/Item/Weapons/Plasma_Cutter</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Cut</damageDef>
+								<damageAmountBase>7</damageAmountBase>
+								<speed>90</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona plasmapiercer -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFE_Gun_Plasmapiercer</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.44</AccuracyTouch>
+								<AccuracyShort>0.51</AccuracyShort>
+								<AccuracyMedium>0.65</AccuracyMedium>
+								<AccuracyLong>0.77</AccuracyLong>
+								<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Plasmapiercer</defaultProjectile>
+									<warmupTime>1.2</warmupTime>
+									<range>24.9</range>
+									<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>VFE_PlasmaShot_Piercer</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Plasmapiercer</defName>
+							<label>plasmapiercer shot</label>
+							<thingClass>VFEI.Other.PlasmapiercerBullet</thingClass>
+							<graphicData>
+								<texPath>Things/Item/Weapons/Plasma_Nail</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>30</damageAmountBase>
+								<armorPenetrationBase>0.8</armorPenetrationBase>
+								<stoppingPower>2</stoppingPower>
+								<speed>90</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona plasmabeam rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFE_Gun_PlasmabeamRifle</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.54</AccuracyTouch>
+								<AccuracyShort>0.64</AccuracyShort>
+								<AccuracyMedium>0.65</AccuracyMedium>
+								<AccuracyLong>0.67</AccuracyLong>
+								<RangedWeapon_Cooldown>3.50</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_PlasmaBeam</defaultProjectile>
+									<warmupTime>1.45</warmupTime>
+									<range>35.9</range>
+									<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+									<burstShotCount>16</burstShotCount>
+									<soundCast>VFE_PlasmaShot_Beam</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_PlasmaBeam</defName>
+							<label>plasma beam</label>
+							<graphicData>
+								<texPath>Things/Item/Weapons/Plasma_Beam</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Flame</damageDef>
+								<damageAmountBase>12</damageAmountBase>
+								<speed>75</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona plasma scattergun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFE_Gun_PlasmaScattergun</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.44</AccuracyTouch>
+								<AccuracyShort>0.54</AccuracyShort>
+								<AccuracyMedium>0.67</AccuracyMedium>
+								<AccuracyLong>0.57</AccuracyLong>
+								<RangedWeapon_Cooldown>1.40</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_PlasmaScatter</defaultProjectile>
+									<warmupTime>2.0</warmupTime>
+									<range>15.9</range>
+									<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+									<burstShotCount>5</burstShotCount>
+									<soundCast>VFE_PlasmaShot_Scattergun</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_PlasmaScatter</defName>
+							<label>plasma scatter shot</label>
+							<graphicData>
+								<texPath>Things/Item/Weapons/Plasma_Scatter</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Flame</damageDef>
+								<damageAmountBase>7</damageAmountBase>
+								<speed>65</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona plasmasaw -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFE_Plasmasaw</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<tools>
+								<li>
+									<label>plasma chain</label>
+									<capacities>
+										<li>Cut</li>
+									</capacities>
+									<power>4</power>
+									<cooldownTime>0.1</cooldownTime>
+									<extraMeleeDamages>
+										<li>
+											<def>Flame</def>
+											<amount>1</amount>
+											<chance>0.5</chance>
+										</li>
+									</extraMeleeDamages>
+								</li>
+							</tools>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

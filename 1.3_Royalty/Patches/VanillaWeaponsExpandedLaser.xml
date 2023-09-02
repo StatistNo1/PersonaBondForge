@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Vanilla Weapons Expanded - Laser</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Persona laser pistol -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_Gun_LaserPistol</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.70</AccuracyTouch>
+								<AccuracyShort>0.82</AccuracyShort>
+								<AccuracyMedium>0.80</AccuracyMedium>
+								<AccuracyLong>0.66</AccuracyLong>
+								<RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<label>Standard</label>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_DefThing_VWEL_Bullet_LaserPistol</defaultProjectile>
+									<warmupTime>2</warmupTime>
+									<range>22.9</range>
+									<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>VWE_LaserShot_Light</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+							<comps>
+								<li Class="VanillaWeaponsExpandedLaser.CompProperties_LaserCapacitor">
+									<UiIconPath>UI/EnableWarmup/EnableWarmup</UiIconPath>
+									<WarmUpReductionPerShot>0.25</WarmUpReductionPerShot>
+									<Overheats>true</Overheats>
+									<OverheatDestroys>false</OverheatDestroys>
+									<OverheatBlastDamageDef>Burn</OverheatBlastDamageDef>
+									<OverheatBlastExtraDamage>2</OverheatBlastExtraDamage>
+									<OverheatBlastRadius>1</OverheatBlastRadius>
+									<OverheatChance>0.05</OverheatChance>
+									<OverheatMoteThrown>HeatGlow</OverheatMoteThrown>
+									<OverheatMoteSize>1</OverheatMoteSize>
+								</li>
+							</comps>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_DefThing_VWEL_Bullet_LaserPistol</defName>
+							<label>laser pistol shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/Shot_LaserPistol</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>13</damageAmountBase>
+								<armorPenetrationBase>0.66</armorPenetrationBase>
+								<stoppingPower>0.5</stoppingPower>
+								<speed>85</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser SMG -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_Gun_LaserSMG</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.76</AccuracyTouch>
+								<AccuracyShort>0.84</AccuracyShort>
+								<AccuracyMedium>0.80</AccuracyMedium>
+								<AccuracyLong>0.56</AccuracyLong>
+								<RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<label>Standard</label>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_DefThing_VWEL_Bullet_LaserPistol</defaultProjectile>
+									<warmupTime>2</warmupTime>
+									<range>19.9</range>
+									<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+									<soundCast>VWE_LaserShot_Light</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+							<comps>
+								<li Class="VanillaWeaponsExpandedLaser.CompProperties_LaserCapacitor">
+									<UiIconPath>UI/EnableWarmup/EnableWarmup</UiIconPath>
+									<WarmUpReductionPerShot>0.5</WarmUpReductionPerShot>
+									<Overheats>true</Overheats>
+									<OverheatDestroys>false</OverheatDestroys>
+									<OverheatBlastDamageDef>Burn</OverheatBlastDamageDef>
+									<OverheatBlastExtraDamage>2</OverheatBlastExtraDamage>
+									<OverheatBlastRadius>1.5</OverheatBlastRadius>
+									<OverheatChance>0.1</OverheatChance>
+									<OverheatMoteThrown>HeatGlow</OverheatMoteThrown>
+									<OverheatMoteSize>1</OverheatMoteSize>
+								</li>
+							</comps>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+				<!-- Persona laser rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_Gun_LaserRifle</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.70</AccuracyTouch>
+								<AccuracyShort>0.83</AccuracyShort>
+								<AccuracyMedium>0.86</AccuracyMedium>
+								<AccuracyLong>0.72</AccuracyLong>
+								<RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<label>Standard</label>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_VWEL_Bullet_LaserRifle</defaultProjectile>
+									<warmupTime>2</warmupTime>
+									<range>31</range>
+									<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>VWE_LaserShot_Rifle</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+							<comps>
+								<li Class="VanillaWeaponsExpandedLaser.CompProperties_LaserCapacitor">
+									<UiIconPath>UI/EnableWarmup/EnableWarmup</UiIconPath>
+									<WarmUpReductionPerShot>0.1</WarmUpReductionPerShot>
+									<Overheats>true</Overheats>
+									<OverheatDestroys>false</OverheatDestroys>
+									<OverheatBlastDamageDef>Burn</OverheatBlastDamageDef>
+									<OverheatBlastExtraDamage>3</OverheatBlastExtraDamage>
+									<OverheatBlastRadius>1.5</OverheatBlastRadius>
+									<OverheatChance>0.05</OverheatChance>
+									<OverheatMoteThrown>HeatGlow</OverheatMoteThrown>
+									<OverheatMoteSize>0.5</OverheatMoteSize>
+								</li>
+							</comps>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="VWEL_Bullet_LaserGeneric" Class="VanillaWeaponsExpandedLaser.LaserBeamDef">
+							<defName>PBF_ThingDef_VWEL_Bullet_LaserRifle</defName>
+							<label>laser shot</label>
+							<description>A focused laser beam.</description>
+							<textures>
+								<li>Things/Projectile/Shot_LaserRifle</li>
+							</textures>
+							<seam>0</seam>
+							<causefireChance>0.1</causefireChance>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>15</damageAmountBase>
+								<armorPenetrationBase>0.56</armorPenetrationBase>
+								<stoppingPower>2</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser shotgun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_Gun_LaserShotgun</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.98</AccuracyTouch>
+								<AccuracyShort>0.92</AccuracyShort>
+								<AccuracyMedium>0.84</AccuracyMedium>
+								<AccuracyLong>0.52</AccuracyLong>
+								<RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<label>Standard</label>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_VWEL_Bullet_LaserShotgun</defaultProjectile>
+									<warmupTime>2.2</warmupTime>
+									<range>19.9</range>
+									<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+									<burstShotCount>4</burstShotCount>
+									<soundCast>VWE_LaserShot_Heavy</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+							<comps>
+								<li Class="VanillaWeaponsExpandedLaser.CompProperties_LaserCapacitor">
+									<UiIconPath>UI/EnableWarmup/EnableWarmup</UiIconPath>
+									<WarmUpReductionPerShot>0.05</WarmUpReductionPerShot>
+									<Overheats>true</Overheats>
+									<OverheatDestroys>false</OverheatDestroys>
+									<OverheatBlastDamageDef>Burn</OverheatBlastDamageDef>
+									<OverheatBlastExtraDamage>3</OverheatBlastExtraDamage>
+									<OverheatBlastRadius>1.5</OverheatBlastRadius>
+									<OverheatChance>0.06</OverheatChance>
+									<OverheatMoteThrown>HeatGlow</OverheatMoteThrown>
+									<OverheatMoteSize>1</OverheatMoteSize>
+								</li>
+							</comps>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="VWEL_Bullet_LaserGeneric" Class="VanillaWeaponsExpandedLaser.LaserBeamDef">
+							<defName>PBF_ThingDef_VWEL_Bullet_LaserShotgun</defName>
+							<label>laser scatter shot</label>
+							<description>A broken down laser beam.</description>
+							<textures>
+								<li>Things/Projectile/Shot_LaserShotgun</li>
+							</textures>
+							<seam>0</seam>
+							<causefireChance>0</causefireChance>
+							<beamWidth>1.3</beamWidth>
+							<lifetime>60</lifetime>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>10</damageAmountBase>
+								<armorPenetrationBase>0.56</armorPenetrationBase>
+								<stoppingPower>2</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser sniper rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_Gun_LaserSniperRifle</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.74</AccuracyTouch>
+								<AccuracyShort>0.95</AccuracyShort>
+								<AccuracyMedium>1.02</AccuracyMedium>
+								<AccuracyLong>0.98</AccuracyLong>
+								<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.15</MoveSpeed>
+							</equippedStatOffsets>
+							<equippedAngleOffset>50</equippedAngleOffset>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<label>Standard</label>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_VWEL_Bullet_LaserSniperRifle</defaultProjectile>
+									<warmupTime>4.6</warmupTime>
+									<range>44.9</range>
+									<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>VWE_LaserShot_Heavy</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+							<comps>
+								<li Class="VanillaWeaponsExpandedLaser.CompProperties_LaserCapacitor">
+									<UiIconPath>UI/EnableWarmup/EnableWarmup</UiIconPath>
+									<WarmUpReductionPerShot>0.5</WarmUpReductionPerShot>
+									<Overheats>true</Overheats>
+									<OverheatDestroys>false</OverheatDestroys>
+									<OverheatBlastDamageDef>Burn</OverheatBlastDamageDef>
+									<OverheatBlastExtraDamage>6</OverheatBlastExtraDamage>
+									<OverheatBlastRadius>1.5</OverheatBlastRadius>
+									<OverheatChance>0.06</OverheatChance>
+									<OverheatMoteThrown>HeatGlow</OverheatMoteThrown>
+									<OverheatMoteSize>1</OverheatMoteSize>
+								</li>
+							</comps>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="VWEL_Bullet_LaserGeneric" Class="VanillaWeaponsExpandedLaser.LaserBeamDef">
+							<defName>PBF_ThingDef_VWEL_Bullet_LaserSniperRifle</defName>
+							<label>precise laser shot</label>
+							<description>A focused, long range laser beam.</description>
+							<textures>
+								<li>Things/Projectile/Shot_LaserSniperRifle</li>
+							</textures>
+							<seam>0.1</seam>
+							<causefireChance>0.2</causefireChance>
+							<beamWidth>1.5</beamWidth>
+							<lifetime>120</lifetime>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>54</damageAmountBase>
+								<armorPenetrationBase>1</armorPenetrationBase>
+								<stoppingPower>3</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser minigun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_Gun_LaserMinigun</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.64</AccuracyTouch>
+								<AccuracyShort>0.76</AccuracyShort>
+								<AccuracyMedium>0.84</AccuracyMedium>
+								<AccuracyLong>0.80</AccuracyLong>
+								<RangedWeapon_Cooldown>0.2</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.25</MoveSpeed>
+							</equippedStatOffsets>
+							<equippedAngleOffset>50</equippedAngleOffset>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<label>Standard</label>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_VWEL_Bullet_LaserMinigun</defaultProjectile>
+									<warmupTime>4</warmupTime>
+									<range>28</range>
+									<ticksBetweenBurstShots>14</ticksBetweenBurstShots>
+									<burstShotCount>8</burstShotCount>
+									<soundCast>VWE_LaserShot_Rifle</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+							<comps>
+								<li Class="VanillaWeaponsExpandedLaser.CompProperties_LaserCapacitor">
+									<UiIconPath>UI/EnableWarmup/EnableWarmup</UiIconPath>
+									<WarmUpReductionPerShot>0.5</WarmUpReductionPerShot>
+									<Overheats>true</Overheats>
+									<OverheatDestroys>false</OverheatDestroys>
+									<OverheatBlastDamageDef>Flame</OverheatBlastDamageDef>
+									<OverheatBlastExtraDamage>6</OverheatBlastExtraDamage>
+									<OverheatBlastRadius>1.5</OverheatBlastRadius>
+									<OverheatChance>0.06</OverheatChance>
+									<OverheatMoteThrown>HeatGlow</OverheatMoteThrown>
+									<OverheatMoteSize>1</OverheatMoteSize>
+								</li>
+								<li>
+									<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+								</li>
+							</comps>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="VWEL_Bullet_LaserGeneric" Class="VanillaWeaponsExpandedLaser.LaserBeamDef">
+							<defName>PBF_ThingDef_VWEL_Bullet_LaserMinigun</defName>
+							<label>laser minigun shot</label>
+							<description>A narrow, focused laser beam from a multibarrel weapon.</description>
+							<textures>
+								<li>Things/Projectile/Shot_LaserMinigun</li>
+							</textures>
+							<seam>0</seam>
+							<causefireChance>0</causefireChance>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>9</damageAmountBase>
+								<armorPenetrationBase>0.32</armorPenetrationBase>
+								<stoppingPower>1</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona tesla gun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_Gun_TeslaGun</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>1</AccuracyTouch>
+								<AccuracyShort>1</AccuracyShort>
+								<AccuracyMedium>1</AccuracyMedium>
+								<AccuracyLong>1</AccuracyLong>
+								<RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.25</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<label>Standard</label>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_VWEL_Bullet_TeslaGun</defaultProjectile>
+									<warmupTime>2.4</warmupTime>
+									<range>18.9</range>
+									<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>VWE_LaserShot_Electricity</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+							<comps>
+								<li Class="VanillaWeaponsExpandedLaser.CompProperties_LaserCapacitor">
+									<WarmUpReductionPerShot>0.2</WarmUpReductionPerShot>
+									<Overheats>false</Overheats>
+									<UiIconPath>UI/EnableWarmup/EnableWarmup</UiIconPath>
+									<OverheatDestroys>false</OverheatDestroys>
+									<OverheatBlastDamageDef>Flame</OverheatBlastDamageDef>
+									<OverheatBlastExtraDamage>0</OverheatBlastExtraDamage>
+									<OverheatBlastRadius>3.5</OverheatBlastRadius>
+									<OverheatChance>0.08</OverheatChance>
+									<OverheatMoteThrown>MicroSparksFast</OverheatMoteThrown>
+									<OverheatMoteSize>0.5</OverheatMoteSize>
+								</li>
+								<li>
+									<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+								</li>
+							</comps>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="VWEL_Bullet_LaserGeneric" Class="VanillaWeaponsExpandedLaser.LaserBeamDef">
+							<defName>PBF_ThingDef_VWEL_Bullet_TeslaGun</defName>
+							<label>tesla shot</label>
+							<description>A lightning bolt emitted by a Tesla device.</description>
+							<graphicData>
+								<graphicClass>Graphic_Flicker</graphicClass>
+								<texPath>Things/Projectile/Shot_TeslaGun</texPath>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>1.5</drawSize>
+							</graphicData>
+							<textures>
+								<li>Things/Projectile/Shot_TeslaGun</li>
+							</textures>
+							<seam>0</seam>
+							<flickerFrameTime>5</flickerFrameTime>
+							<causefireChance>0.05</causefireChance>
+							<beamWidth>4</beamWidth>
+							<lifetime>120</lifetime>
+							<projectile>
+								<damageDef>EMP</damageDef>
+								<damageAmountBase>16</damageAmountBase>
+								<armorPenetrationBase>0.45</armorPenetrationBase>
+								<stoppingPower>1</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser sword -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWEL_LaserSword</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<equippedAngleOffset>-15</equippedAngleOffset>
+							<tools>
+								<li>
+									<label>handle</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>9</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+								<li>
+									<label>point</label>
+									<capacities>
+										<li>Cut</li>
+									</capacities>
+									<power>38</power>
+									<armorPenetration>0.50</armorPenetration>
+									<cooldownTime>2.2</cooldownTime>
+								</li>
+								<li>
+									<label>blade</label>
+									<capacities>
+										<li>Cut</li>
+									</capacities>
+									<power>38</power>
+									<armorPenetration>0.50</armorPenetration>
+									<cooldownTime>2.2</cooldownTime>
+								</li>
+							</tools>
+							<comps>
+								<li Class="CompOversizedWeapon.CompProperties_OversizedWeapon">
+									<groundGraphic>
+										<texPath>Things/WeaponMelee/LaserSwordOff</texPath>
+										<graphicClass>Graphic_Single</graphicClass>
+										<shaderType>CutoutComplex</shaderType>
+									</groundGraphic>
+								</li>
+							</comps>
+							<tradeability>Sellable</tradeability>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Rimsenal - Core</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Persona YP microwave emmiter -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>YP_GeugGwang</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.7</AccuracyTouch>
+								<AccuracyShort>0.95</AccuracyShort>
+								<AccuracyMedium>0.85</AccuracyMedium>
+								<AccuracyLong>0.70</AccuracyLong>
+								<RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<forcedMissRadius>0.5</forcedMissRadius>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_GeugGwang</defaultProjectile>
+									<warmupTime>1.25</warmupTime>
+									<range>28</range>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>RS_ShotBoreas</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>14</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_GeugGwang</defName>
+							<label>microwave</label>
+							<graphicData>
+								<texPath>Things/Projectile/Microwave</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<thingClass>Projectile_Explosive</thingClass>
+							<projectile>
+								<speed>80</speed>
+								<damageDef>Microwave</damageDef>
+								<damageAmountBase>2</damageAmountBase>
+								<explosionRadius>1.5</explosionRadius>
+								<ai_IsIncendiary>true</ai_IsIncendiary>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona YP vector shot -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>YP_VectorShot</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.7</AccuracyTouch>
+								<AccuracyShort>0.9</AccuracyShort>
+								<AccuracyMedium>0.6</AccuracyMedium>
+								<AccuracyLong>0.4</AccuracyLong>
+								<RangedWeapon_Cooldown>0.79</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<forcedMissRadius>0.5</forcedMissRadius>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VectorShot</defaultProjectile>
+									<warmupTime>1.05</warmupTime>
+									<requireLineOfSight>false</requireLineOfSight>
+									<range>10</range>
+									<burstShotCount>3</burstShotCount>
+									<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+									<soundCast>RS_ShotShard</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>10</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VectorShot</defName>
+							<label>smart bolt</label>
+							<graphicData>
+								<texPath>Things/Projectile/Harrower</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<thingClass>Projectile_Explosive</thingClass>
+							<projectile>
+								<damageDef>Shredder</damageDef>
+								<damageAmountBase>14</damageAmountBase>
+								<flyOverhead>True</flyOverhead>
+								<soundHitThickRoof>RS_ShotShard</soundHitThickRoof>
+								<speed>45</speed>
+								<explosionRadius>1</explosionRadius>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona YP swarmer -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>YP_SagPung</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.85</AccuracyTouch>
+								<AccuracyShort>1</AccuracyShort>
+								<AccuracyMedium>1</AccuracyMedium>
+								<AccuracyLong>1</AccuracyLong>
+								<RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_SagPung</defaultProjectile>
+									<warmupTime>0.9</warmupTime>
+									<range>15</range>
+									<burstShotCount>4</burstShotCount>
+									<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+									<soundCast>RS_ShotSwarm</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_SagPung</defName>
+							<label>sagpung swarm</label>
+							<graphicData>
+								<texPath>Things/Projectile/Swarm</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Shredder</damageDef>
+								<damageAmountBase>12</damageAmountBase>
+								<speed>70</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona YP spike rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>YP_SangAe</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.65</AccuracyTouch>
+								<AccuracyShort>0.75</AccuracyShort>
+								<AccuracyMedium>0.85</AccuracyMedium>
+								<AccuracyLong>1</AccuracyLong>
+								<RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_BSangAe</defaultProjectile>
+									<warmupTime>1.8</warmupTime>
+									<range>35</range>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>RS_ShotSpike</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>8</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_BSangAe</defName>
+							<label>sangae spike</label>
+							<graphicData>
+								<texPath>Things/Projectile/Spike</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Shredder</damageDef>
+								<damageAmountBase>25</damageAmountBase>
+								<speed>80</speed>
+								<stoppingPower>0.2</stoppingPower>
+								<armorPenetrationBase>0.6</armorPenetrationBase>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona YP dual wield shard pistols -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>YP_SeolHwa</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_SeolHwa</defaultProjectile>
+									<warmupTime>0.3</warmupTime>
+									<minRange>1.5</minRange>
+									<range>22.9</range>
+									<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+									<soundCast>VWE_Shot_ChargePistol</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<AccuracyTouch>0.9</AccuracyTouch>
+								<AccuracyShort>0.80</AccuracyShort>
+								<AccuracyMedium>0.50</AccuracyMedium>
+								<AccuracyLong>0.40</AccuracyLong>
+								<RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_SeolHwa</defName>
+							<label>seolhwa shard</label>
+							<graphicData>
+								<texPath>Things/Projectile/Shard</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Shredder</damageDef>
+								<damageAmountBase>8</damageAmountBase>
+								<speed>90</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona JI molten rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JI_Hrunting</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.75</AccuracyTouch>
+								<AccuracyShort>0.85</AccuracyShort>
+								<AccuracyMedium>0.9</AccuracyMedium>
+								<AccuracyLong>0.75</AccuracyLong>
+								<RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.15</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Hrunting</defaultProjectile>
+									<warmupTime>1.25</warmupTime>
+									<range>29</range>
+									<soundCast>RS_ShotJI</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>12</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Hrunting</defName>
+							<label>hrunting slug</label>
+							<graphicData>
+								<texPath>Things/Projectile/Slug</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>28</damageAmountBase>
+								<speed>65</speed>
+								<stoppingPower>3</stoppingPower>
+								<armorPenetrationBase>0.71</armorPenetrationBase>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona JI molten pistol -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JI_Trollsverd</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.9</AccuracyTouch>
+								<AccuracyShort>0.8</AccuracyShort>
+								<AccuracyMedium>0.65</AccuracyMedium>
+								<AccuracyLong>0.35</AccuracyLong>
+								<RangedWeapon_Cooldown>1.06</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Trollsverd</defaultProjectile>
+									<warmupTime>0.45</warmupTime>
+									<range>18</range>
+									<soundCast>RS_ShotJI</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Trollsverd</defName>
+							<label>trollsverd slug</label>
+							<graphicData>
+								<texPath>Things/Projectile/Slug</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>24</damageAmountBase>
+								<speed>80</speed>
+								<stoppingPower>2</stoppingPower>
+								<armorPenetrationBase>0.71</armorPenetrationBase>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona JI siege shotgun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JI_Fafnir</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Fafnir</defaultProjectile>
+									<warmupTime>0.3</warmupTime>
+									<minRange>1.5</minRange>
+									<range>22.9</range>
+									<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+									<soundCast>VWE_Shot_ChargePistol</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<AccuracyTouch>0.9</AccuracyTouch>
+								<AccuracyShort>0.80</AccuracyShort>
+								<AccuracyMedium>0.50</AccuracyMedium>
+								<AccuracyLong>0.40</AccuracyLong>
+								<RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Fafnir</defName>
+							<label>fafnir bucks</label>
+							<graphicData>
+								<texPath>Things/Projectile/Slug</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>16</damageAmountBase>
+								<speed>80</speed>
+								<stoppingPower>2</stoppingPower>
+								<armorPenetrationBase>0.71</armorPenetrationBase>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona JI AMR -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JI_Gramr</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.5</AccuracyTouch>
+								<AccuracyShort>0.8</AccuracyShort>
+								<AccuracyMedium>1</AccuracyMedium>
+								<AccuracyLong>0.94</AccuracyLong>
+								<RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.3</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Gramr</defaultProjectile>
+									<warmupTime>4</warmupTime>
+									<range>50</range>
+									<soundCast>RS_ShotJI</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>15</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Gramr</defName>
+							<label>gramr slug</label>
+							<graphicData>
+								<texPath>Things/Projectile/Shell</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>60</damageAmountBase>
+								<speed>90</speed>
+								<stoppingPower>3</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona JI siege gun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JI_Grendel</baseWeaponDefName>
+							<equippedStatOffsets>
+								<MoveSpeed>-1.5</MoveSpeed>
+							</equippedStatOffsets>
+							<statBases>
+								<AccuracyTouch>0.45</AccuracyTouch>
+								<AccuracyShort>0.65</AccuracyShort>
+								<AccuracyMedium>0.65</AccuracyMedium>
+								<AccuracyLong>0.55</AccuracyLong>
+								<RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Grendel</defaultProjectile>
+									<burstShotCount>1</burstShotCount>
+									<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+									<forcedMissRadius>1</forcedMissRadius>
+									<warmupTime>4.2</warmupTime>
+									<range>20</range>
+									<soundCast>RS_ShotGrendel</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<onlyManualCast>true</onlyManualCast>
+									<muzzleFlashScale>0</muzzleFlashScale>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Grendel</defName>
+							<label>grendel shell</label>
+							<graphicData>
+								<texPath>Things/Projectile/Rocket</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<thingClass>Projectile_Explosive</thingClass>
+							<projectile>
+								<flyOverhead>False</flyOverhead>
+								<damageDef>Bomb</damageDef>
+								<damageAmountBase>24</damageAmountBase>
+								<explosionRadius>2.5</explosionRadius>
+								<speed>30</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona JI suppressor cannon -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JI_Muspell</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.5</AccuracyTouch>
+								<AccuracyShort>0.52</AccuracyShort>
+								<AccuracyMedium>0.6</AccuracyMedium>
+								<AccuracyLong>0.3</AccuracyLong>
+								<RangedWeapon_Cooldown>0.50</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.3</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Muspell</defaultProjectile>
+									<warmupTime>1.8</warmupTime>
+									<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+									<burstShotCount>15</burstShotCount>
+									<range>27</range>
+									<soundCast>RS_ShotMuspell</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>12</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Muspell</defName>
+							<label>fragment</label>
+							<graphicData>
+								<texPath>Things/Projectile/Slug</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>13</damageAmountBase>
+								<speed>45</speed>
+								<stoppingPower>2</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona vibro daggers -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>YP_BingJu</baseWeaponDefName>
+							<equippedAngleOffset>0</equippedAngleOffset>
+							<tools>
+								<li>
+									<label>handle</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>4</power>
+									<cooldownTime>0.4</cooldownTime>
+								</li>
+								<li>
+									<label>point</label>
+									<capacities>
+										<li>Stab</li>
+									</capacities>
+									<power>11</power>
+									<cooldownTime>0.4</cooldownTime>
+								</li>
+								<li>
+									<label>edge</label>
+									<capacities>
+										<li>Cut</li>
+									</capacities>
+									<power>11</power>
+									<cooldownTime>0.4</cooldownTime>
+								</li>
+							</tools>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+				<!-- Persona assault hammer -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JI_Ormbane</baseWeaponDefName>
+							<techLevel>Spacer</techLevel>
+							<equippedAngleOffset>0</equippedAngleOffset>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.3</MoveSpeed>
+							</equippedStatOffsets>
+							<tools>
+								<li>
+									<label>handle</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>10</power>
+									<cooldownTime>1.6</cooldownTime>
+								</li>
+								<li>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>42</power>
+									<cooldownTime>2.5</cooldownTime>
+								</li>
+							</tools>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+				<!-- Persona survival knife -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>TE_Eris</baseWeaponDefName>
+							<techLevel>Spacer</techLevel>
+							<equippedAngleOffset>-35</equippedAngleOffset>
+							<equippedStatOffsets>
+								<WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+							</equippedStatOffsets>
+							<tools>
+								<li>
+									<label>handle</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>6</power>
+									<cooldownTime>1.6</cooldownTime>
+								</li>
+								<li>
+									<label>blade</label>
+									<capacities>
+										<li>Cut</li>
+									</capacities>
+									<power>13</power>
+									<cooldownTime>1.1</cooldownTime>
+								</li>
+								<li>
+									<label>point</label>
+									<capacities>
+										<li>Stab</li>
+									</capacities>
+									<power>14.7</power>
+									<cooldownTime>1.2</cooldownTime>
+								</li>
+							</tools>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+				<!-- Persona torch sword -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>MeleeWeapon_TorchSword</baseWeaponDefName>
+							<techLevel>Spacer</techLevel>
+							<equippedAngleOffset>-5</equippedAngleOffset>
+							<tools>
+								<li>
+									<label>handle</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>6</power>
+									<cooldownTime>2.5</cooldownTime>
+								</li>
+								<li>
+									<label>point</label>
+									<capacities>
+										<li>Stab</li>
+									</capacities>
+									<power>19</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+								<li>
+									<label>edge</label>
+									<capacities>
+										<li>Cut</li>
+									</capacities>
+									<power>26</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+				<!-- Persona TE kinetic rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>TE_KineticRifle</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.85</AccuracyTouch>
+								<AccuracyShort>0.9</AccuracyShort>
+								<AccuracyMedium>0.75</AccuracyMedium>
+								<AccuracyLong>0.6</AccuracyLong>
+								<RangedWeapon_Cooldown>0.42</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Tyrant</defaultProjectile>
+									<warmupTime>0.5</warmupTime>
+									<range>25</range>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>ImpactM</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>8</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Tyrant</defName>
+							<label>impact shell</label>
+							<graphicData>
+								<texPath>Things/Projectile/ImpactM</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Crush</damageDef>
+								<damageAmountBase>15</damageAmountBase>
+								<speed>75</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona TE kinetic pistol -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>TE_KineticPistol</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.80</AccuracyTouch>
+								<AccuracyShort>0.95</AccuracyShort>
+								<AccuracyMedium>0.95</AccuracyMedium>
+								<AccuracyLong>0.35</AccuracyLong>
+								<RangedWeapon_Cooldown>0.32</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Tormentor</defaultProjectile>
+									<warmupTime>0.35</warmupTime>
+									<range>16</range>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>ImpactM</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>8</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Tormentor</defName>
+							<label>impact shell</label>
+							<graphicData>
+								<texPath>Things/Projectile/ImpactM</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Crush</damageDef>
+								<damageAmountBase>15</damageAmountBase>
+								<speed>75</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona TE thudd gun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>TE_ThuddGun</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.95</AccuracyTouch>
+								<AccuracyShort>0.75</AccuracyShort>
+								<AccuracyMedium>0.6</AccuracyMedium>
+								<AccuracyLong>0.3</AccuracyLong>
+								<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<forcedMissRadius>1.0</forcedMissRadius>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Oppressor</defaultProjectile>
+									<warmupTime>1</warmupTime>
+									<range>17</range>
+									<soundCast>ImpactB</soundCast>
+									<burstShotCount>1</burstShotCount>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>12</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Oppressor</defName>
+							<label>kinetic canister</label>
+							<graphicData>
+								<texPath>Things/Projectile/ImpactB</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<thingClass>Projectile_Explosive</thingClass>
+							<projectile>
+								<flyOverhead>False</flyOverhead>
+								<damageDef>KineticImpact</damageDef>
+								<damageAmountBase>20</damageAmountBase>
+								<explosionRadius>1</explosionRadius>
+								<speed>50</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona TE kinetic long rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>TE_KineticLongRifle</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.75</AccuracyTouch>
+								<AccuracyShort>0.85</AccuracyShort>
+								<AccuracyMedium>0.93</AccuracyMedium>
+								<AccuracyLong>0.9</AccuracyLong>
+								<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Wailer</defaultProjectile>
+									<warmupTime>2.35</warmupTime>
+									<range>41</range>
+									<soundCast>ImpactL</soundCast>
+									<burstShotCount>1</burstShotCount>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>12</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Wailer</defName>
+							<label>impact shell</label>
+							<graphicData>
+								<texPath>Things/Projectile/ImpactL</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Crush</damageDef>
+								<damageAmountBase>30</damageAmountBase>
+								<speed>80</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona TE singularity projector -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>TE_StormCannon</baseWeaponDefName>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.15</MoveSpeed>
+							</equippedStatOffsets>
+							<statBases>
+								<AccuracyTouch>0.95</AccuracyTouch>
+								<AccuracyShort>0.55</AccuracyShort>
+								<AccuracyMedium>0.39</AccuracyMedium>
+								<AccuracyLong>0.21</AccuracyLong>
+								<RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+									<forcedMissRadius>2</forcedMissRadius>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Atrocity</defaultProjectile>
+									<warmupTime>2.8</warmupTime>
+									<range>25</range>
+									<soundCast>ImpactB</soundCast>
+									<burstShotCount>3</burstShotCount>
+									<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>12</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Atrocity</defName>
+							<label>singularity sphere</label>
+							<graphicData>
+								<texPath>Things/Projectile/ImpactC</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<thingClass>Projectile_Explosive</thingClass>
+							<projectile>
+								<flyOverhead>False</flyOverhead>
+								<damageDef>KineticImpact</damageDef>
+								<damageAmountBase>9</damageAmountBase>
+								<explosionRadius>2</explosionRadius>
+								<speed>75</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona TE kinetic lance -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>TE_KineticLance</baseWeaponDefName>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.25</MoveSpeed>
+							</equippedStatOffsets>
+							<statBases>
+								<AccuracyTouch>0.8</AccuracyTouch>
+								<AccuracyShort>1</AccuracyShort>
+								<AccuracyMedium>1</AccuracyMedium>
+								<AccuracyLong>0.95</AccuracyLong>
+								<RangedWeapon_Cooldown>2.9</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<forcedMissRadius>0.5</forcedMissRadius>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Harrower</defaultProjectile>
+									<warmupTime>3.2</warmupTime>
+									<range>20</range>
+									<soundCast>SoundHarrower</soundCast>
+									<burstShotCount>18</burstShotCount>
+									<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>18</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_Harrower</defName>
+							<label>kinetic energy</label>
+							<graphicData>
+								<texPath>Things/Projectile/Harrower</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<thingClass>Projectile_Explosive</thingClass>
+							<projectile>
+								<flyOverhead>False</flyOverhead>
+								<damageDef>KineticImpact</damageDef>
+								<damageAmountBase>10</damageAmountBase>
+								<explosionRadius>0.5</explosionRadius>
+								<speed>300</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona YP shard rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>YP_SeoLi</baseWeaponDefName>
+							<statBases>
+								<AccuracyTouch>0.8</AccuracyTouch>
+								<AccuracyShort>1</AccuracyShort>
+								<AccuracyMedium>0.7</AccuracyMedium>
+								<AccuracyLong>0.4</AccuracyLong>
+								<RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_SeoLi</defaultProjectile>
+									<warmupTime>0.85</warmupTime>
+									<range>20</range>
+									<burstShotCount>6</burstShotCount>
+									<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+									<soundCast>RS_ShotShard</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>4</muzzleFlashScale>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_SeoLi</defName>
+							<label>seoli shard</label>
+							<graphicData>
+								<texPath>Things/Projectile/Shard</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Shredder</damageDef>
+								<damageAmountBase>11</damageAmountBase>
+								<speed>80</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

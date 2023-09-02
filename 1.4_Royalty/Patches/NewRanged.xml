@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!--<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>NewValue</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>NewValue</baseWeaponDefName>
+							<verbs>
+							</verbs>
+							<statBases>
+								<AccuracyTouch>NewValue</AccuracyTouch>
+								<AccuracyShort>NewValue</AccuracyShort>
+								<AccuracyMedium>NewValue</AccuracyMedium>
+								<AccuracyLong>NewValue</AccuracyLong>
+								<RangedWeapon_Cooldown>NewValue</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>-->
+</Patch>

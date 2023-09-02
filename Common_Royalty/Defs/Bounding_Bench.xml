@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BenchBase">
+		<defName>PersonaBondForge_ThingDef_BondingBench</defName>
+		<label>persona bond forge</label>
+		<description>An ultra-tech workbench equipped with advanced tools for bonding and fusing weapons with persona cores.</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<WorkToBuild>20000</WorkToBuild>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<minifiedDef/>
+		<thingCategories Inherit="false"/>
+		<size>(5,2)</size>
+		<costList>
+			<Uranium>100</Uranium>
+			<Plasteel>150</Plasteel>
+			<ComponentIndustrial>40</ComponentIndustrial>
+			<ComponentSpacer>20</ComponentSpacer>
+		</costList>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+				</linkableFacilities>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>1500</basePowerConsumption>
+				<shortCircuitInRain>true</shortCircuitInRain>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<graphicData>
+			<texPath>Things/Building/BoundingBench</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(7,4)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<fillPercent>0.5</fillPercent>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<hasInteractionCell>true</hasInteractionCell>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Production</designationCategory>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>Bound_Research</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<WorkGiverDef>
+		<defName>DoBillsUseBoundingBench</defName>
+		<label>bound things at an persona bond forge</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>PersonaBondForge_ThingDef_BondingBench</li>
+		</fixedBillGiverDefs>
+		<verb>craft</verb>
+		<gerund>bonding at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+</Defs>
+   

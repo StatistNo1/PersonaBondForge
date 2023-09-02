@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>[JDS] Exiled Dawn</li>
+			<li>[JDS] The Forge - Exiled Dawn Armory</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Persona plasma shortstop -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JDSExiledDawn_Reforged_Plasma_Shortstop</baseWeaponDefName>
+							<statBases>
+								<Mass>1</Mass>
+								<AccuracyTouch>1.10</AccuracyTouch>
+								<AccuracyShort>1.0</AccuracyShort>
+								<AccuracyMedium>0.60</AccuracyMedium>
+								<AccuracyLong>0.30</AccuracyLong>
+								<RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<defaultProjectile>PBF_ThingDef_Bullet_Low_Plasma</defaultProjectile>
+									<warmupTime>0.02</warmupTime>
+									<range>15</range>
+									<burstShotCount>2</burstShotCount>
+									<soundCast>reforged_plasma_shortstop_shot</soundCast>
+									<muzzleFlashScale>7</muzzleFlashScale>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<soundCastTail>GunTail_Light</soundCastTail>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="JDSExiledDawnBullet">
+							<defName>PBF_ThingDef_Bullet_Low_Plasma</defName>
+							<label>Low Density Plasma Bullet</label>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>9</damageAmountBase>
+								<speed>100</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona plasma shooter -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JDSExiledDawn_Reforged_Plasma_Shooter</baseWeaponDefName>
+							<statBases>
+								<Mass>1.5</Mass>
+								<AccuracyTouch>1.10</AccuracyTouch>
+								<AccuracyShort>1.0</AccuracyShort>
+								<AccuracyMedium>0.80</AccuracyMedium>
+								<AccuracyLong>0.35</AccuracyLong>
+								<RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<defaultProjectile>Bonded_Mid_Density_Plasma_Bullet</defaultProjectile>
+									<warmupTime>0.05</warmupTime>
+									<range>25</range>
+									<burstShotCount>3</burstShotCount>
+									<soundCast>reforged_plasma_shooter_shot</soundCast>
+									<muzzleFlashScale>7</muzzleFlashScale>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<soundCastTail>GunTail_Light</soundCastTail>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="JDSExiledDawnBullet">
+							<defName>Bonded_Mid_Density_Plasma_Bullet</defName>
+							<label>Median Density Plasma Bullet</label>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>20</damageAmountBase>
+								<speed>100</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona reforged plasma rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JDSExiledDawn_Reforged_Plasma_Rifle</baseWeaponDefName>
+							<statBases>
+								<Mass>2.5</Mass>
+								<AccuracyTouch>0.45</AccuracyTouch>
+								<AccuracyShort>0.60</AccuracyShort>
+								<AccuracyMedium>0.80</AccuracyMedium>
+								<AccuracyLong>0.96</AccuracyLong>
+								<RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<defaultProjectile>Bonded_High_Density_Plasma_Bullet</defaultProjectile>
+									<warmupTime>2.2</warmupTime>
+									<range>35</range>
+									<burstShotCount>4</burstShotCount>
+									<soundCast>reforged_Plasma_rifle_shot</soundCast>
+									<muzzleFlashScale>7</muzzleFlashScale>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<soundCastTail>GunTail_Light</soundCastTail>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+							<ThingDef ParentName="JDSExiledDawnBullet">
+								<defName>Bonded_High_Density_Plasma_Bullet</defName>
+								<label>High Density Plasma Bullet</label>
+								<projectile>
+									<damageDef>Bullet</damageDef>
+									<damageAmountBase>35</damageAmountBase>
+									<speed>100</speed>
+								</projectile>
+							</ThingDef>
+					</value>
+				</li>
+				<!-- Persona reforged plasma rail -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JDSExiledDawn_Reforged_Plasma_Rail</baseWeaponDefName>
+							<statBases>
+								<Mass>2.5</Mass>
+								<AccuracyTouch>0.50</AccuracyTouch>
+								<AccuracyShort>0.70</AccuracyShort>
+								<AccuracyMedium>1.10</AccuracyMedium>
+								<AccuracyLong>1.10</AccuracyLong>
+								<RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<defaultProjectile>Bonded_Rail_Plasma_Bullet</defaultProjectile>
+									<warmupTime>1.6</warmupTime>
+									<range>50</range>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>reforged_plasma_rail_shot</soundCast>
+									<muzzleFlashScale>7</muzzleFlashScale>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<soundCastTail>GunTail_Light</soundCastTail>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="JDSExiledDawnBullet">
+							<defName>Bonded_Rail_Plasma_Bullet</defName>
+							<label>High Density Plasma Bullet</label>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>45</damageAmountBase>
+								<speed>120</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona reforged plasma minigun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JDSExiledDawn_Reforged_Plasma_Minigun</baseWeaponDefName>
+							<statBases>
+								<Mass>3</Mass>
+								<AccuracyTouch>0.50</AccuracyTouch>
+								<AccuracyShort>0.50</AccuracyShort>
+								<AccuracyMedium>1.10</AccuracyMedium>
+								<AccuracyLong>0.60</AccuracyLong>
+								<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.20</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<defaultProjectile>Bonded_Mini_Plasma_Bullet</defaultProjectile>
+									<warmupTime>2.0</warmupTime>
+									<range>40</range>
+									<burstShotCount>25</burstShotCount>
+									<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+									<soundCast>reforged_plasma_minigun_shot</soundCast>
+									<muzzleFlashScale>7</muzzleFlashScale>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<soundCastTail>GunTail_Light</soundCastTail>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="JDSExiledDawnBullet">
+							<defName>Bonded_Mini_Plasma_Bullet</defName>
+							<label>Low Density Plasma Bullet</label>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>7</damageAmountBase>
+								<speed>100</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona reforged cannon -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>JDSExiledDawn_Reforged_Cannon</baseWeaponDefName>
+							<statBases>
+								<Mass>2</Mass>
+								<AccuracyTouch>1.10</AccuracyTouch>
+								<AccuracyShort>1.0</AccuracyShort>
+								<AccuracyMedium>0.60</AccuracyMedium>
+								<AccuracyLong>0.30</AccuracyLong>
+								<RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<defaultProjectile>Bonded_High_Density_Plasma_Grenade</defaultProjectile>
+									<warmupTime>3.2</warmupTime>
+									<range>26</range>
+									<forcedMissRadius>1.9</forcedMissRadius>
+									<burstShotCount>1</burstShotCount>
+									<soundCast>Shot_IncendiaryLauncher</soundCast>
+									<muzzleFlashScale>14</muzzleFlashScale>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<targetParams>
+										<canTargetLocations>true</canTargetLocations>
+									</targetParams>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>Bonded_High_Density_Plasma_Grenade</defName>
+							<label>High Density Plasma Grenade</label>
+							<thingClass>Projectile_Explosive</thingClass>
+							<graphicData>
+								<texPath>Things/Misc/Plasma2_Bullet</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>25</damageAmountBase>
+								<speed>40</speed>
+								<explosionRadius>1.5</explosionRadius>
+								<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+								<ai_IsIncendiary>true</ai_IsIncendiary>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>PersonaBondForge_ThingDef_BondingCore</defName>
+		<label>bonding core</label>
+		<description>A hyper-advanced computer core that houses a peak-human-equivalent machine persona. In its isolated state, the core is dormant, prepared and programed for weapon bonding process.</description>
+		<graphicData>
+			<texPath>Things/Item/BoundingCore</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>4000</MarketValue>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>2</Mass>
+			<Flammability>0.2</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>Items</li>
+		</thingCategories>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<tradeability>Sellable</tradeability>
+		<techLevel>Ultra</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+	<RecipeDef>
+		<defName>PersonaBondForge_RecipeDef_Make_BondingCore</defName>
+		<label>make bonding core</label>
+		<description>Making an Bonding Core.</description>
+		<jobString>Making an bonding core.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>50000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AIPersonaCore</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Luciferium</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AIPersonaCore</li>
+				<li>Luciferium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+		</products>
+		<skillRequirements>
+			<Crafting>15</Crafting>
+		</skillRequirements>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>Bound_Research</researchPrerequisite>
+		<recipeUsers>
+			<li>FabricationBench</li>
+		</recipeUsers>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>PersonaBondForge_RecipeDef_RerollTraits</defName>
+		<label>reset the traits of a persona weapon</label>
+		<description>Reset traits of persona weapons.</description>
+		<jobString>Resetting the traits of a weapon.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Luciferium</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Luciferium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Crafting>15</Crafting>
+		</skillRequirements>
+		<products>
+			<UnfinishedComponent>1</UnfinishedComponent>
+		</products>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>Bound_Research</researchPrerequisite>
+		<recipeUsers>
+			<li>PersonaBondForge_ThingDef_BondingBench</li>
+		</recipeUsers>
+	</RecipeDef>
+</Defs>
+   

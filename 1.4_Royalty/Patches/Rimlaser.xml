@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Rimlaser</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Designation category -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingCategoryDef>
+							<defName>PBF_Persona_Rimlaser</defName>
+							<label>persona rimlaser weapons</label>
+							<parent>WeaponsRanged</parent>
+						</ThingCategoryDef>
+					</value>
+				</li>
+				<!-- Persona laser rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseLaserGun" Name="Rimlaser_LaserRifle" Class="Rimlaser.LaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_LaserRifle</defName>
+							<label>persona laser rifle</label>
+							<description>A futuristic laser rifle design. Does about as much damage as laser pistol per beam, but fires twice as fast and is designed to work at greater range.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/LaserRifle</texPath>
+							</graphicData>
+							<barrelLength>0.825</barrelLength>
+							<statBases>
+								<WorkToMake>200000</WorkToMake>
+								<Mass>5.5</Mass>
+								<AccuracyTouch>0.70</AccuracyTouch>
+								<AccuracyShort>0.80</AccuracyShort>
+								<AccuracyMedium>0.75</AccuracyMedium>
+								<AccuracyLong>0.65</AccuracyLong>
+								<RangedWeapon_Cooldown>0.2</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_LaserRifle</defaultProjectile>
+									<warmupTime>1.0</warmupTime>
+									<range>38.9</range>
+									<soundCast>LaserRifle_Fire</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<butcherProducts>
+								<RimlaserPrism>2</RimlaserPrism>
+								<ComponentIndustrial>2</ComponentIndustrial>
+							</butcherProducts>
+							<tools>
+								<li>
+									<label>stock</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>9</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+								<li>
+									<label>barrel</label>
+									<capacities>
+										<li>Blunt</li>
+										<li>Poke</li>
+									</capacities>
+									<power>9</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+								<Rimlaser_LaserRifle>1</Rimlaser_LaserRifle>
+							</costList>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserColored" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDef_Bullet_LaserRifle</defName>
+							<label>laser rifle beam</label>
+							<projectile>
+								<damageAmountBase>24</damageAmountBase>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser pistol -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseLaserGun" Class="Rimlaser.LaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_LaserPistol</defName>
+							<label>persona laser pistol</label>
+							<description>A futuristic laser pistol design. Quite powerful, has a decent range for a pistol and is quick on the draw.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/LaserPistol</texPath>
+							</graphicData>
+							<barrelLength>0.75</barrelLength>
+							<butcherProducts>
+								<RimlaserPrism>1</RimlaserPrism>
+								<ComponentIndustrial>1</ComponentIndustrial>
+							</butcherProducts>
+							<statBases>
+								<WorkToMake>200000</WorkToMake>
+								<Mass>2.4</Mass>
+								<AccuracyTouch>0.98</AccuracyTouch>
+								<AccuracyShort>0.9</AccuracyShort>
+								<AccuracyMedium>0.55</AccuracyMedium>
+								<AccuracyLong>0.45</AccuracyLong>
+								<RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDefBullet_LaserPistol</defaultProjectile>
+									<warmupTime>0.3</warmupTime>
+									<range>30.9</range>
+									<soundCast>LaserPistol_fire</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<Rimlaser_LaserPistol>1</Rimlaser_LaserPistol>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+							</costList>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+							<tools>
+								<li>
+									<label>grip</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>9</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+								<li>
+									<label>barrel</label>
+									<capacities>
+										<li>Blunt</li>
+										<li>Poke</li>
+									</capacities>
+									<power>9</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserColored" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDefBullet_LaserPistol</defName>
+							<label>laser pistol beam</label>
+							<projectile>
+								<damageAmountBase>24</damageAmountBase>
+							</projectile>
+							<beamWidth>0.6</beamWidth>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona heavy laser -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef Name="LaserHeavy" ParentName="BaseLaserGun" Class="Rimlaser.LaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_LaserHeavy</defName>
+							<label>persona heavy laser</label>
+							<description>A heavy laser gun. Inflicts gigantic amounts of damage, but is very costly to make and hard to operate at close distances.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/LaserHeavy</texPath>
+							</graphicData>
+							<barrelLength>0.86</barrelLength>
+							<statBases>
+								<Mass>18</Mass>
+								<WorkToMake>200000</WorkToMake>
+								<AccuracyTouch>0.2</AccuracyTouch>
+								<AccuracyShort>0.8</AccuracyShort>
+								<AccuracyMedium>0.8</AccuracyMedium>
+								<AccuracyLong>0.6</AccuracyLong>
+								<RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+							</statBases>
+							<butcherProducts>
+								<RimlaserPrism>4</RimlaserPrism>
+								<ComponentIndustrial>8</ComponentIndustrial>
+							</butcherProducts>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.25</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDefBullet_LaserHeavy</defaultProjectile>
+									<warmupTime>1.7</warmupTime>
+									<minRange>0</minRange>
+									<range>44.9</range>
+									<soundCast>LaserHeavy_fire</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<Rimlaser_LaserHeavy>1</Rimlaser_LaserHeavy>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+							</costList>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserColored" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDefBullet_LaserHeavy</defName>
+							<label>heavy laser beam</label>
+							<projectile>
+								<damageAmountBase>54</damageAmountBase>
+							</projectile>
+							<beamWidth>1.8</beamWidth>
+							<lifetime>120</lifetime>
+							<impulse>6</impulse>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona incendiary laser -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseLaserGun" Class="Rimlaser.LaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_LaserIncendiary</defName>
+							<label>persona incendiary laser</label>
+							<description>A clever design that despite not doing much damage for its size, has tendency to ignite its target.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/LaserIncendiary</texPath>
+							</graphicData>
+							<barrelLength>0.875</barrelLength>
+							<statBases>
+								<Mass>10</Mass>
+								<WorkToMake>200000</WorkToMake>
+								<AccuracyTouch>0.7</AccuracyTouch>
+								<AccuracyShort>0.9</AccuracyShort>
+								<AccuracyMedium>0.9</AccuracyMedium>
+								<AccuracyLong>0.8</AccuracyLong>
+								<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.10</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_LaserIncendiary</defaultProjectile>
+									<warmupTime>1.4</warmupTime>
+									<range>38.9</range>
+									<soundCast>LaserIncendiary_fire</soundCast>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<butcherProducts>
+								<RimlaserPrism>1</RimlaserPrism>
+								<ComponentIndustrial>1</ComponentIndustrial>
+							</butcherProducts>
+							<tools>
+								<li>
+									<label>barrel</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>12</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<Rimlaser_LaserIncendiary>1</Rimlaser_LaserIncendiary>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+							</costList>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserInc" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDef_Bullet_LaserIncendiary</defName>
+							<label>incendiary laser beam</label>
+							<projectile>
+								<damageDef>Flame</damageDef>
+								<damageAmountBase>24</damageAmountBase>
+							</projectile>
+							<beamWidth>1.4</beamWidth>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser sniper rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseLaserGun" Class="Rimlaser.LaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_LaserSniper</defName>
+							<label>persona laser sniper rifle</label>
+							<description>A long-range laser rifle. Does a good amount of damage and at great range, but is bulky and nearly impossible to operate at close range.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/LaserSniper</texPath>
+							</graphicData>
+							<barrelLength>0.875</barrelLength>
+							<statBases>
+								<Mass>10</Mass>
+								<WorkToMake>200000</WorkToMake>
+								<AccuracyTouch>0.2</AccuracyTouch>
+								<AccuracyShort>0.3</AccuracyShort>
+								<AccuracyMedium>0.8</AccuracyMedium>
+								<AccuracyLong>1.0</AccuracyLong>
+								<RangedWeapon_Cooldown>2.2</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.10</MoveSpeed>
+							</equippedStatOffsets>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_LaserSniper</defaultProjectile>
+									<warmupTime>3.0</warmupTime>
+									<range>56.9</range>
+									<soundCast>LaserSniper_fire</soundCast>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<butcherProducts>
+								<RimlaserPrism>2</RimlaserPrism>
+								<ComponentIndustrial>3</ComponentIndustrial>
+							</butcherProducts>
+							<tools>
+								<li>
+									<label>barrel</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>10</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<Rimlaser_LaserSniper>1</Rimlaser_LaserSniper>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+							</costList>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserColored" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDef_Bullet_LaserSniper</defName>
+							<label>sniper laser beam</label>
+							<projectile>
+								<damageAmountBase>38</damageAmountBase>
+							</projectile>
+							<beamWidth>0.9</beamWidth>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona laser minigun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseLaserGun" Class="Rimlaser.SpinningLaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_LaserMinigun</defName>
+							<label>persona laser minigun</label>
+							<description>A laser gun with three barrels spun by an electric motor. Due to fragility of rotating parts it has to take a long time to spin up, but once it starts firing it fires very fast, and with somewhat better accuracy than its gunpowder variation.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<thingClass>Rimlaser.SpinningLaserGun</thingClass>
+							<barrelLength>0.86</barrelLength>
+							<frames>
+								<li>
+									<texPath>Rimlaser/Weapons/LaserMinigun-1</texPath>
+									<graphicClass>Graphic_Single</graphicClass>
+								</li>
+								<li>
+									<texPath>Rimlaser/Weapons/LaserMinigun-2</texPath>
+									<graphicClass>Graphic_Single</graphicClass>
+								</li>
+								<li>
+									<texPath>Rimlaser/Weapons/LaserMinigun-3</texPath>
+									<graphicClass>Graphic_Single</graphicClass>
+								</li>
+								<li>
+									<texPath>Rimlaser/Weapons/LaserMinigun-4</texPath>
+									<graphicClass>Graphic_Single</graphicClass>
+								</li>
+							</frames>
+							<rotationSpeed>1.0</rotationSpeed>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/LaserMinigun-1</texPath>
+							</graphicData>
+							<statBases>
+								<Mass>20</Mass>
+								<WorkToMake>200000</WorkToMake>
+								<AccuracyTouch>0.45</AccuracyTouch>
+								<AccuracyShort>0.45</AccuracyShort>
+								<AccuracyMedium>0.4</AccuracyMedium>
+								<AccuracyLong>0.35</AccuracyLong>
+								<RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.25</MoveSpeed>
+							</equippedStatOffsets>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<Rimlaser_LaserMinigun>1</Rimlaser_LaserMinigun>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+							</costList>
+							<butcherProducts>
+								<RimlaserPrism>2</RimlaserPrism>
+								<ComponentIndustrial>3</ComponentIndustrial>
+							</butcherProducts>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_LaserMinigun</defaultProjectile>
+									<warmupTime>5.0</warmupTime>
+									<range>36.9</range>
+									<soundCast>LaserMinigun_fire</soundCast>
+									<muzzleFlashScale>9</muzzleFlashScale>
+									<soundAiming>LaserMinigun_warmup</soundAiming>
+									<burstShotCount>30</burstShotCount>
+									<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+								</li>
+							</verbs>
+							<tools>
+								<li>
+									<label>barrel</label>
+									<capacities>
+									<li>Blunt</li>
+									</capacities>
+									<power>16</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserColored" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDef_Bullet_LaserMinigun</defName>
+							<label>minigun laser beam</label>
+							<projectile>
+								<damageAmountBase>18</damageAmountBase>
+							</projectile>
+							<beamWidth>0.4</beamWidth>
+							<lifetime>16</lifetime>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona Garin's Hyperboloid -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseNonMakeableLaserGun" Class="Rimlaser.LaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_DeathRay</defName>
+							<label>persona Garin's hyperboloid</label>
+							<description>A monstrous device that violates first, second and third laws of thermodynamics to bring a concentrated ray of death to anyone who dares to stand in its owner's path.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/Hyperboloid</texPath>
+							</graphicData>
+							<barrelLength>0.9</barrelLength>
+							<supportsColors>false</supportsColors>
+							<statBases>
+								<Mass>30</Mass>
+								<WorkToMake>200000</WorkToMake>
+								<AccuracyTouch>0.80</AccuracyTouch>
+								<AccuracyShort>0.75</AccuracyShort>
+								<AccuracyMedium>0.70</AccuracyMedium>
+								<AccuracyLong>0.65</AccuracyLong>
+								<RangedWeapon_Cooldown>0.2</RangedWeapon_Cooldown>
+							</statBases>
+							<butcherProducts>
+							<RimlaserPrism>4</RimlaserPrism>
+							<ComponentIndustrial>12</ComponentIndustrial>
+							</butcherProducts>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_DeathRay</defaultProjectile>
+									<warmupTime>3.5</warmupTime>
+									<range>64.9</range>
+									<soundCast>DeathRay_fire</soundCast>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<tools>
+								<li>
+									<label>barrel</label>
+									<capacities>
+									<li>Blunt</li>
+									</capacities>
+									<power>16</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<Rimlaser_DeathRay>1</Rimlaser_DeathRay>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+							</costList>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserDeathRay" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDef_Bullet_DeathRay</defName>
+							<label>death ray</label>
+							<projectile>
+								<damageAmountBase>125</damageAmountBase>
+								<stoppingPower>15</stoppingPower>
+							</projectile>
+							<beamWidth>1.5</beamWidth>
+							<lifetime>120</lifetime>
+							<impulse>6</impulse>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona tesla gun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="BaseLaserGun" Class="Rimlaser.LaserGunDef">
+							<defName>PBF_ThingDef_Weapon_Rimlaser_TeslaGun</defName>
+							<label>persona tesla gun</label>
+							<description>A lightning gun. Can only attack at very short range, but has good stopping power.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+							<graphicData>
+								<texPath>Rimlaser/Weapons/Tesla</texPath>
+							</graphicData>
+							<barrelLength>0.875</barrelLength>
+							<supportsColors>false</supportsColors>
+							<statBases>
+								<Mass>20</Mass>
+								<WorkToMake>200000</WorkToMake>
+								<AccuracyTouch>0.85</AccuracyTouch>
+								<AccuracyShort>0.65</AccuracyShort>
+								<AccuracyMedium>0.25</AccuracyMedium>
+								<AccuracyLong>0.15</AccuracyLong>
+								<RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_Tesla</defaultProjectile>
+									<warmupTime>0.75</warmupTime>
+									<range>18.9</range>
+									<soundCast>Tesla_fire</soundCast>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<tools>
+								<li>
+									<label>barrel</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>16</power>
+									<cooldownTime>2</cooldownTime>
+								</li>
+							</tools>
+							<recipeMaker>
+								<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+								<workSkill>Intellectual</workSkill>
+								<skillRequirements>
+									<Intellectual>15</Intellectual>
+								</skillRequirements>
+								<recipeUsers Inherit="False">
+									<li>PersonaBondForge_ThingDef_BondingBench</li>
+								</recipeUsers>
+								<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+							</recipeMaker>
+							<costList>
+								<Rimlaser_TeslaGun>1</Rimlaser_TeslaGun>
+								<PersonaBondForge_ThingDef_BondingCore>1</PersonaBondForge_ThingDef_BondingCore>
+							</costList>
+							<thingCategories Inherit="False">
+								<li>PBF_Persona_Rimlaser</li>
+							</thingCategories>
+							<comps>
+								<li Class="CompProperties_BladelinkWeapon">
+									<biocodeOnEquip>true</biocodeOnEquip>
+								</li>
+								<li Class="CompProperties_GeneratedName">
+									<nameMaker>NamerWeaponBladelink</nameMaker>
+								</li>
+								<li Class="CompProperties_Forbiddable"/>
+								<li Class="CompProperties_Styleable"/>
+							</comps>
+						</ThingDef>
+						<ThingDef ParentName="Bullet_LaserGeneric" Class="Rimlaser.LaserBeamDef">
+							<defName>PBF_ThingDef_Bullet_Tesla</defName>
+							<label>bolt of lightning</label>
+							<textures>
+								<li>Rimlaser/Effects/Lightning</li>
+							</textures>
+							<seam>0</seam>
+							<projectile>
+								<damageAmountBase>14</damageAmountBase>
+								<stoppingPower>12</stoppingPower>
+							</projectile>
+							<beamWidth>1.0</beamWidth>
+							<shieldDamageMultiplier>100</shieldDamageMultiplier>
+						</ThingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

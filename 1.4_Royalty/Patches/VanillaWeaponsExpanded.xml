@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Vanilla Weapons Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Persona charge pistol -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWE_Gun_ChargePistol</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VWE_ChargePistol</defaultProjectile>
+									<warmupTime>0.3</warmupTime>
+									<minRange>1.5</minRange>
+									<range>22.9</range>
+									<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+									<soundCast>VWE_Shot_ChargePistol</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<MarketValue>3000</MarketValue>
+								<Mass>1.1</Mass>
+								<AccuracyTouch>0.9</AccuracyTouch>
+								<AccuracyShort>0.80</AccuracyShort>
+								<AccuracyMedium>0.50</AccuracyMedium>
+								<AccuracyLong>0.40</AccuracyLong>
+								<RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VWE_ChargePistol</defName>
+							<label>charge pistol shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/Charge_Small</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>1.05</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>12</damageAmountBase>
+								<armorPenetrationBase>0.35</armorPenetrationBase>
+								<speed>70</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona charge shotgun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWE_Gun_ChargeShotgun</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VWE_ChargeShotgun</defaultProjectile>
+									<warmupTime>0.9</warmupTime>
+									<range>12.9</range>
+									<soundCast>VWE_Shot_ChargeShotgun</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<MarketValue>3000</MarketValue>
+								<Mass>4.6</Mass>
+								<AccuracyTouch>0.8</AccuracyTouch>
+								<AccuracyShort>0.77</AccuracyShort>
+								<AccuracyMedium>0.67</AccuracyMedium>
+								<AccuracyLong>0.64</AccuracyLong>
+								<RangedWeapon_Cooldown>0.95</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VWE_ChargeShotgun</defName>
+							<label>charge pistol shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/Bullet_Charge_Shotgun</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>1.2</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>26</damageAmountBase>
+								<armorPenetrationBase>0.45</armorPenetrationBase>
+								<stoppingPower>3</stoppingPower>
+								<speed>60</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona charge SMG -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWE_Gun_ChargeSMG</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VWE_ChargeSMG</defaultProjectile>
+									<warmupTime>0.9</warmupTime>
+									<range>19.9</range>
+									<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+									<soundCast>VWE_Shot_ChargeSMG</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<MarketValue>3000</MarketValue>
+								<Mass>3</Mass>
+								<AccuracyTouch>0.95</AccuracyTouch>
+								<AccuracyShort>0.75</AccuracyShort>
+								<AccuracyMedium>0.45</AccuracyMedium>
+								<AccuracyLong>0.30</AccuracyLong>
+								<RangedWeapon_Cooldown>1.35</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VWE_ChargeSMG</defName>
+							<label>rapid charge shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/Charge_Small</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>1.2</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>17</damageAmountBase>
+								<armorPenetrationBase>0.35</armorPenetrationBase>
+								<speed>70</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona charge LMG -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWE_Gun_ChargeLMG</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VWE_ChargeLMG</defaultProjectile>
+									<warmupTime>1.8</warmupTime>
+									<range>25.9</range>
+									<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+									<burstShotCount>12</burstShotCount>
+									<soundCast>Shot_ChargeBlaster</soundCast>
+									<soundCastTail>GunTail_Heavy</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<MarketValue>3000</MarketValue>
+								<Mass>8.5</Mass>
+								<AccuracyTouch>0.5</AccuracyTouch>
+								<AccuracyShort>0.54</AccuracyShort>
+								<AccuracyMedium>0.40</AccuracyMedium>
+								<AccuracyLong>0.31</AccuracyLong>
+								<RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VWE_ChargeLMG</defName>
+							<label>charge LMG shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/Bullet_Charge_Big</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>0.8</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>14</damageAmountBase>
+								<armorPenetrationBase>0.35</armorPenetrationBase>
+								<stoppingPower>1</stoppingPower>
+								<speed>60</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona charge sniper rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWE_Gun_ChargeSniperRifle</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VWE_ChargeSniperRifle</defaultProjectile>
+									<warmupTime>3.5</warmupTime>
+									<range>38.9</range>
+									<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+									<soundCast>VWE_Shot_ChargeSniperRifle</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<MarketValue>3000</MarketValue>
+								<Mass>4.6</Mass>
+								<AccuracyTouch>0.60</AccuracyTouch>
+								<AccuracyShort>0.80</AccuracyShort>
+								<AccuracyMedium>0.96</AccuracyMedium>
+								<AccuracyLong>0.98</AccuracyLong>
+								<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VWE_ChargeSniperRifle</defName>
+							<label>charge sniper shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/ChargeLanceShot</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>18</damageAmountBase>
+								<armorPenetrationBase>0.35</armorPenetrationBase>
+								<stoppingPower>1.5</stoppingPower>
+								<speed>80</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona charge charge minigun -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VWE_Gun_ChargeMinigun</baseWeaponDefName>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VWE_ChargeMinigun</defaultProjectile>
+									<warmupTime>2.8</warmupTime>
+									<minRange>1.5</minRange>
+									<range>33.9</range>
+									<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+									<burstShotCount>35</burstShotCount>
+									<soundCast>VWE_Shot_ChargeMinigun</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<statBases>
+								<MarketValue>3000</MarketValue>
+								<Mass>12</Mass>
+								<AccuracyTouch>0.25</AccuracyTouch>
+								<AccuracyShort>0.35</AccuracyShort>
+								<AccuracyMedium>0.35</AccuracyMedium>
+								<AccuracyLong>0.28</AccuracyLong>
+								<RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+							</statBases>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VWE_ChargeMinigun</defName>
+							<label>charge minigun shot</label>
+							<graphicData>
+								<texPath>Things/Projectile/Bullet_Charge_Minigun</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+							</graphicData>
+							<projectile>
+								<damageDef>Bullet</damageDef>
+								<damageAmountBase>11</damageAmountBase>
+								<armorPenetrationBase>0.25</armorPenetrationBase>
+								<speed>60</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

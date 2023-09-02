@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ <!-- ====================== Bondig Research ===================== -->
+
+<Defs> 
+ <ResearchProjectDef>
+    <defName>Bound_Research</defName>
+    <label>Persona Bounding</label>
+    <description>Learn how to bond certain weapons with AI Persona to create Persona Weapons.</description>
+    <baseCost>14000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>ShipComputerCore</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>16.00</researchViewX>
+    <researchViewY>3.90</researchViewY>
+  </ResearchProjectDef>
+  
+ </Defs>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<success>Always</success>
+		<mods>
+			<li>Vanilla Factions Expanded - Vikings</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<!-- Persona heavy crossbow -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFEV_CryptoHeavyCrossbow</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.55</AccuracyTouch>
+								<AccuracyShort>0.75</AccuracyShort>
+								<AccuracyMedium>0.95</AccuracyMedium>
+								<AccuracyLong>1.00</AccuracyLong>
+								<RangedWeapon_Cooldown>2.30</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VFEV_HeavyCryptoBolt</defaultProjectile>
+									<warmupTime>3.2</warmupTime>
+									<range>46</range>
+									<soundCast>VFEV_CryptoHeavyCrossbowShot</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+									<minRange>4.0</minRange>
+								</li>
+							</verbs>
+							<equippedStatOffsets>
+								<MoveSpeed>-0.20</MoveSpeed>
+							</equippedStatOffsets>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VFEV_HeavyCryptoBolt</defName>
+							<label>crypto bolt</label>
+							<thingClass>VFEV.CryptoBullet</thingClass>
+							<graphicData>
+								<texPath>Things/Projectile/CryptoBolt</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>1.0</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>VFEV_CryptoDamageBolt</damageDef>
+								<damageAmountBase>38</damageAmountBase>
+								<armorPenetrationBase>0.50</armorPenetrationBase>
+								<stoppingPower>1.7</stoppingPower>
+								<speed>80</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona crypto crossbow -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFEV_CryptoLightCrossbow</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.60</AccuracyTouch>
+								<AccuracyShort>0.85</AccuracyShort>
+								<AccuracyMedium>0.80</AccuracyMedium>
+								<AccuracyLong>0.75</AccuracyLong>
+								<RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VFEV_CryptoBolt</defaultProjectile>
+									<warmupTime>0.5</warmupTime>
+									<range>29.0</range>
+									<soundCast>VFEV_CryptoLightCrossbowShot</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+								</li>
+							</verbs>
+							<modExtensions>
+								<li Class="VFECore.ThingDefExtension">
+									<usableWithShields>true</usableWithShields>
+								</li>
+							</modExtensions>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VFEV_CryptoBolt</defName>
+							<label>crypto bolt</label>
+							<thingClass>VFEV.CryptoBullet</thingClass>
+							<graphicData>
+								<texPath>Things/Projectile/CryptoBolt</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>1.0</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>VFEV_CryptoDamageBolt</damageDef>
+								<damageAmountBase>18</damageAmountBase>
+								<armorPenetrationBase>0.32</armorPenetrationBase>
+								<speed>60</speed>
+								<stoppingPower>1.0</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona crypto pistol -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFEV_CryptoPistol</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.95</AccuracyTouch>
+								<AccuracyShort>0.80</AccuracyShort>
+								<AccuracyMedium>0.50</AccuracyMedium>
+								<AccuracyLong>0.35</AccuracyLong>
+								<RangedWeapon_Cooldown>0.10</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VFEV_CryptoPistolBullet</defaultProjectile>
+									<warmupTime>0.6</warmupTime>
+									<range>18.0</range>
+									<soundCast>VFEV_CryptoPistolShot</soundCast>
+									<soundCastTail>GunTail_Light</soundCastTail>
+									<muzzleFlashScale>9</muzzleFlashScale>
+									<ticksBetweenBurstShots>16</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+								</li>
+							</verbs>
+							<modExtensions>
+								<li Class="VFECore.ThingDefExtension">
+									<usableWithShields>true</usableWithShields>
+								</li>
+							</modExtensions>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VFEV_CryptoPistolBullet</defName>
+							<label>crypto bullet</label>
+							<thingClass>VFEV.CryptoBullet</thingClass>
+							<graphicData>
+								<texPath>Things/Projectile/CryptoBullet</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>0.60</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>VFEV_CryptoDamageBullet</damageDef>
+								<damageAmountBase>9</damageAmountBase>
+								<armorPenetrationBase>0.20</armorPenetrationBase>
+								<speed>55</speed>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona crypto rifle -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFEV_CryptoRifle</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.55</AccuracyTouch>
+								<AccuracyShort>0.70</AccuracyShort>
+								<AccuracyMedium>0.75</AccuracyMedium>
+								<AccuracyLong>0.65</AccuracyLong>
+								<RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+							</statBases>
+							<verbs>
+								<li>
+									<verbClass>Verb_Shoot</verbClass>
+									<hasStandardCommand>true</hasStandardCommand>
+									<defaultProjectile>PBF_ThingDef_Bullet_VFEV_CryptoRifleBullet</defaultProjectile>
+									<warmupTime>1.2</warmupTime>
+									<range>27.0</range>
+									<soundCast>VFEV_CryptoRifleShot</soundCast>
+									<soundCastTail>GunTail_Medium</soundCastTail>
+									<muzzleFlashScale>11</muzzleFlashScale>
+									<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+									<burstShotCount>3</burstShotCount>
+								</li>
+							</verbs>
+						</PersonaBondForge.ThingDef_Weapon>
+						<ThingDef ParentName="BaseBullet">
+							<defName>PBF_ThingDef_Bullet_VFEV_CryptoRifleBullet</defName>
+							<label>crypto bullet</label>
+							<thingClass>VFEV.CryptoBullet</thingClass>
+							<graphicData>
+								<texPath>Things/Projectile/CryptoBullet</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<shaderType>TransparentPostLight</shaderType>
+								<drawSize>0.80</drawSize>
+							</graphicData>
+							<projectile>
+								<damageDef>VFEV_CryptoDamageBullet</damageDef>
+								<damageAmountBase>21</damageAmountBase>
+								<armorPenetrationBase>0.35</armorPenetrationBase>
+								<speed>60</speed>
+								<stoppingPower>0.7</stoppingPower>
+							</projectile>
+						</ThingDef>
+					</value>
+				</li>
+				<!-- Persona heavy crypto axe -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFEV_CryptoHeavyAxe</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<tools>
+								<li>
+									<label>pommel</label>
+									<capacities>
+										<li>Poke</li>
+									</capacities>
+									<power>18</power>
+									<cooldownTime>2.4</cooldownTime>
+								</li>
+								<li>
+									<label>blade</label>
+									<capacities>
+										<li>VFEV_Cut</li>
+									</capacities>
+									<power>38</power>
+									<armorPenetration>0.35</armorPenetration>
+									<cooldownTime>2.2</cooldownTime>
+								</li>
+							</tools>
+							<modExtensions>
+								<li Class="VFECore.ThingDefExtension">
+									<usableWithShields>false</usableWithShields>
+								</li>
+							</modExtensions>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+				<!-- Persona crypto hatchet -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<PersonaBondForge.ThingDef_Weapon ParentName="PersonaBondForge_BaseWeapon">
+							<baseWeaponDefName>VFEV_CryptoLightAxe</baseWeaponDefName>
+							<techLevel>Ultra</techLevel>
+							<statBases>
+								<AccuracyTouch>0.85</AccuracyTouch>
+								<AccuracyShort>0.75</AccuracyShort>
+								<AccuracyMedium>0.45</AccuracyMedium>
+								<AccuracyLong>0.25</AccuracyLong>
+								<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+							</statBases>
+							<equippedAngleOffset>25</equippedAngleOffset>
+							<tools>
+								<li>
+									<label>pommel</label>
+									<capacities>
+										<li>Poke</li>
+									</capacities>
+									<power>12</power>
+									<cooldownTime>2.0</cooldownTime>
+								</li>
+								<li>
+									<label>blade</label>
+									<capacities>
+										<li>VFEV_Cut</li>
+									</capacities>
+									<power>18</power>
+									<armorPenetration>0.35</armorPenetration>
+									<cooldownTime>1.8</cooldownTime>
+								</li>
+							</tools>
+							<modExtensions>
+								<li Class="VFECore.ThingDefExtension">
+									<usableWithShields>true</usableWithShields>
+								</li>
+							</modExtensions>
+						</PersonaBondForge.ThingDef_Weapon>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
